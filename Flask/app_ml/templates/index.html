@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Heart Disease Predictor</h1>
+    <p class="lead">Individual entry:</p>
+    <hr class="my-4">
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="M"> Male
+        <input type="radio" id="female" name="gender" value="F"> Female<br><br>
+
+        <label for="ChestPainType">ChestPainType:</label>
+        <select id="ChestPainType" name="ChestPainType">
+            <option value="NAP">NAP</option>
+            <option value="ASY">ASY</option>
+            <option value="TA">TA</option>
+            <option value="ATA">ATA</option>
+        </select><br><br>
+
+        <label for="RestingBP">RestingBP:</label>
+        <input type="number" id="RestingBP" name="RestingBP"><br><br>
+
+        <label for="Cholesterol">Cholesterol:</label>
+        <input type="number" id="Cholesterol" name="Cholesterol">
+        
+        <label for="Model" style="padding-left: 320px;">Model:</label>
+        <select name="Model">
+            <option value="KNN">KNN</option>
+            <option value="Lreg">Logistic Regression</option>
+            <option value="DL">Deep Learning</option>
+        </select>
+        
+        <br><br>
+
+        <label for="FastingBS">FastingBS:</label>
+        <input type="radio" id="Y" name="FastingBS" value="Y"> Yes(1)
+        <input type="radio" id="N" name="FastingBS" value="N"> No(0)<br><br>
+
+        <label for="RestingECG">RestingECG:</label>
+        <select id="RestingECG" name="RestingECG">
+            <option value="Normal">Normal</option>
+            <option value="LVH">LVH</option>
+            <option value="ST">ST</option>
+        </select><br><br>
+
+        <label for="MaxHR">MaxHR:</label>
+        <input type="number" id="MaxHR" name="MaxHR"><br><br>
+
+        <label for="ExerciseAngina">ExerciseAngina:</label>
+        <input type="radio" id="Y" name="ExerciseAngina" value="Y"> Yes
+        <input type="radio" id="N" name="ExerciseAngina" value="N"> No<br><br>
+
+        <label for="Oldpeak">Oldpeak:</label>
+        <input type="number" id="Oldpeak" name="Oldpeak"><br><br>
+
+        <label for="ST_Slope">ST_Slope:</label>
+        <select id="ST_Slope" name="ST_Slope">
+            <option value="Down">Down</option>
+            <option value="Up">Up</option>
+            <option value="Flat">Flat</option>
+        </select><br><br>
+
+        <input type="submit" value="submit">
+
+    </form>
+</div>
+{% endblock %}
